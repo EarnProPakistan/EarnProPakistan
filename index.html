@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EarnPro - Premium Referral Earning Platform</title>
-  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -23,17 +22,14 @@
     body { background-color: var(--bg-dark); color: var(--text-light); padding-bottom: 40px; }
     .container { max-width: 500px; margin: 0 auto; padding: 15px; }
     
-    /* Header & Branding */
     .app-header { text-align: center; padding: 20px 0 10px; }
     .app-header h1 { font-size: 26px; font-weight: 800; background: linear-gradient(to right, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .app-header p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
-    /* Cards */
     .card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); margin-bottom: 18px; }
     .card-title { font-size: 17px; font-weight: 700; color: var(--text-light); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
     .card-title i { color: var(--primary); }
 
-    /* Buttons */
     .btn { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--secondary), #059669); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px; }
     .btn:hover { opacity: 0.95; transform: translateY(-1px); }
     .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
@@ -41,18 +37,15 @@
     .btn-danger { background: #ef4444; }
     .btn-disabled { background: #475569 !important; cursor: not-allowed; opacity: 0.6; }
 
-    /* Form Fields */
     .input-group { margin-bottom: 14px; }
     .input-group label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--text-muted); }
     .input-group input, .input-group select { width: 100%; padding: 12px; background: #0f172a; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; color: var(--text-light); outline: none; }
     .input-group input:focus, .input-group select:focus { border-color: var(--primary); }
 
-    /* Tabs */
     .nav-tabs { display: flex; background: var(--card-bg); padding: 6px; border-radius: 12px; margin-bottom: 18px; border: 1px solid var(--border-color); }
     .tab-btn { flex: 1; padding: 10px 4px; text-align: center; font-weight: 600; font-size: 12px; cursor: pointer; border-radius: 8px; color: var(--text-muted); transition: 0.3s; }
     .tab-btn.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); }
 
-    /* Balance Dashboard */
     .balance-card { background: linear-gradient(135deg, #312e81, #1e1b4b); border: 1px solid #4338ca; position: relative; overflow: hidden; }
     .balance-card::after { content: ''; position: absolute; right: -20px; bottom: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.05); border-radius: 50%; }
     .balance-label { font-size: 12px; color: #c7d2fe; text-transform: uppercase; letter-spacing: 1px; }
@@ -61,12 +54,10 @@
     .status-active { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
     .status-unpaid { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
 
-    /* Bank Payment Box */
     .payment-info-box { background: #0f172a; border: 1px dashed var(--accent); padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align: center; }
     .payment-number { font-size: 22px; font-weight: 800; color: var(--accent); letter-spacing: 1px; margin: 5px 0; }
     .notice-text { font-size: 12px; color: #fca5a5; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 6px; margin-top: 8px; line-height: 1.4; }
 
-    /* Referral Levels & Progress Bars */
     .level-card { background: #0f172a; border: 1px solid var(--border-color); padding: 14px; margin-bottom: 12px; border-radius: 10px; }
     .level-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .level-name { font-weight: 700; font-size: 15px; color: var(--text-light); }
@@ -75,13 +66,19 @@
     .progress-bar-bg { width: 100%; height: 8px; background: #334155; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
     .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0%; transition: width 0.5s ease; }
 
-    /* Tables for Admin */
+    /* Admin Stats Card Styles */
+    .admin-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+    .stat-box { background: #0f172a; border: 1px solid var(--border-color); border-radius: 10px; padding: 12px; text-align: center; }
+    .stat-box .num { font-size: 22px; font-weight: 800; color: var(--secondary); }
+    .stat-box .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
     table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; text-align: left; }
     th, td { border: 1px solid var(--border-color); padding: 8px; }
     th { background: #0f172a; color: var(--text-muted); font-weight: 600; }
 
     .hidden { display: none !important; }
     .copy-btn { background: var(--primary); color: #fff; border: none; padding: 0 15px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .action-btn-group { display: flex; gap: 4px; }
   </style>
 </head>
 <body>
@@ -93,10 +90,10 @@
     <p>Watch, Refer & Earn Daily Income</p>
   </div>
 
-  <!-- LOGIN / SIGNUP PAGE -->
+  <!-- AUTH PAGE -->
   <div id="auth-page" class="card">
     <div class="card-title"><i class="fa-solid fa-user-lock"></i> <span id="auth-title">Login Account</span></div>
-    <form id="auth-form" onsubmit="handleAuth(event)">
+    <form id="auth-form" onsubmit="return handleAuth(event)">
       <div class="input-group">
         <label>Phone Number</label>
         <input type="text" id="auth-phone" placeholder="03XXXXXXXXX" required pattern="[0-9]{11}">
@@ -109,13 +106,12 @@
     </form>
     <p style="text-align: center; margin-top: 15px; font-size: 13px; color: var(--text-muted);">
       <span id="auth-toggle-text">Account nahi hai?</span>
-      <a href="#" onclick="toggleAuthMode()" id="auth-toggle-link" style="color: var(--primary); font-weight: bold; text-decoration: none;">Sign Up karein</a>
+      <a href="javascript:void(0)" onclick="toggleAuthMode()" id="auth-toggle-link" style="color: var(--primary); font-weight: bold; text-decoration: none;">Sign Up karein</a>
     </p>
   </div>
 
   <!-- USER DASHBOARD -->
   <div id="user-dashboard" class="hidden">
-    
     <div class="nav-tabs">
       <div class="tab-btn active" onclick="switchTab('home')"><i class="fa-solid fa-house"></i> Home</div>
       <div class="tab-btn" onclick="switchTab('withdraw')"><i class="fa-solid fa-wallet"></i> Withdraw</div>
@@ -142,25 +138,21 @@
         </div>
       </div>
 
-      <!-- DEPOSIT SECTION -->
       <div class="card">
         <div class="card-title"><i class="fa-solid fa-money-bill-wave"></i> Deposit Account (Rs. 300)</div>
-        
         <div class="payment-info-box">
           <p style="font-size: 13px; color: var(--text-muted);">Send Rs. 300 to this number on EasyPaisa:</p>
           <div class="payment-number"><i class="fa-solid fa-mobile-screen"></i> 03496865411</div>
           <p style="font-size: 12px; color: #34d399; font-weight: 600;">Account Title: EasyPaisa Deposit</p>
-          
           <div class="notice-text">
             <i class="fa-solid fa-triangle-exclamation"></i> Payment send karne ke bad isi number par WhatsApp par screenshot lazmi bhejein!
           </div>
-
           <a href="https://wa.me/923496865411?text=Main%20ne%20300%20RS%20deposit%20kar%20diye%20hain%20screenshot%20check%20karein" target="_blank" class="btn btn-wa">
             <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Screenshot
           </a>
         </div>
 
-        <form onsubmit="submitDeposit(event)">
+        <form onsubmit="return submitDeposit(event)">
           <div class="input-group">
             <label>Payment Method</label>
             <select id="dep-method" required>
@@ -180,7 +172,7 @@
     <div id="tab-withdraw" class="hidden">
       <div class="card">
         <div class="card-title"><i class="fa-solid fa-hand-holding-dollar"></i> Withdraw Funds</div>
-        <form onsubmit="submitWithdrawal(event)">
+        <form onsubmit="return submitWithdrawal(event)">
           <div class="input-group">
             <label>Amount (Min Rs. 50)</label>
             <input type="number" id="with-amount" min="50" placeholder="Enter Amount" required>
@@ -210,20 +202,36 @@
       <div class="card">
         <div class="card-title"><i class="fa-solid fa-trophy"></i> Referral Level Rewards</div>
         <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px;">Aap ke direct active referrals barhne par rewards unlock honge.</p>
-        
-        <div id="levels-container">
-          <!-- Dynamic Levels generated by JS -->
-        </div>
+        <div id="levels-container"></div>
       </div>
     </div>
-
   </div>
 
   <!-- ADMIN PANEL -->
   <div id="admin-dashboard" class="hidden">
-    <div class="card" style="display:flex; justify-shadow:space-between; align-items:center; background: linear-gradient(135deg, #1e1b4b, #312e81);">
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; background: linear-gradient(135deg, #1e1b4b, #312e81);">
       <h2 style="font-size:18px; color:#fff;"><i class="fa-solid fa-user-shield"></i> Admin Panel</h2>
       <button class="btn btn-danger" style="width:auto; padding:6px 12px; font-size:12px;" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ADMIN STATS BOX -->
+    <div class="admin-stats-grid">
+      <div class="stat-box">
+        <div class="num" id="stat-total-users">0</div>
+        <div class="label">Total Users</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stat-active-users" style="color: #34d399;">0</div>
+        <div class="label">Active Users</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stat-pending-dep" style="color: var(--accent);">0</div>
+        <div class="label">Pending Deposits</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="stat-pending-with" style="color: #6366f1;">0</div>
+        <div class="label">Pending Withdraws</div>
+      </div>
     </div>
 
     <div class="card">
@@ -279,11 +287,23 @@
     </div>
   </div>
 
-        </div>
-      <script>
+  </div>
+  <!-- Firebase SDKs (v9 Compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    databaseURL: "https://earn-station-41be5-default-rtdb.firebaseio.com"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const db = firebase.database();
+
   const ADMIN_PHONE = "03496865411";
 
-  // Targets & Bonus configuration
   const LEVEL_CONFIG = [
     { level: 1, target: 5, reward: 150 },
     { level: 2, target: 10, reward: 300 },
@@ -292,20 +312,11 @@
     { level: 5, target: 30, reward: 1350 }
   ];
 
-  // LocalStorage state management
-  let users = JSON.parse(localStorage.getItem('app_users')) || [];
-  let deposits = JSON.parse(localStorage.getItem('app_deposits')) || [];
-  let withdrawals = JSON.parse(localStorage.getItem('app_withdrawals')) || [];
-  let currentUser = JSON.parse(localStorage.getItem('app_current_user')) || null;
-
+  let currentUserPhone = localStorage.getItem('app_current_user_phone') || null;
   let isSignUp = false;
 
-  function saveData() {
-    localStorage.setItem('app_users', JSON.stringify(users));
-    localStorage.setItem('app_deposits', JSON.stringify(deposits));
-    localStorage.setItem('app_withdrawals', JSON.stringify(withdrawals));
-    localStorage.setItem('app_current_user', JSON.stringify(currentUser));
-  }
+  const urlParams = new URLSearchParams(window.location.search);
+  const referredBy = urlParams.get('ref');
 
   function toggleAuthMode() {
     isSignUp = !isSignUp;
@@ -316,46 +327,62 @@
   }
 
   function handleAuth(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
+    
     const phone = document.getElementById('auth-phone').value.trim();
     const password = document.getElementById('auth-password').value.trim();
 
-    // Admin Login Check
-    if (phone === ADMIN_PHONE) {
-      currentUser = { phone: ADMIN_PHONE, isAdmin: true };
-      saveData();
+    if (!phone || !password) {
+      alert("Please phone number aur password dono fill karein!");
+      return false;
+    }
+
+    if (!isSignUp && phone === ADMIN_PHONE) {
+      currentUserPhone = ADMIN_PHONE;
+      localStorage.setItem('app_current_user_phone', ADMIN_PHONE);
       showAdminPanel();
-      return;
+      return false;
     }
 
     if (isSignUp) {
-      const existing = users.find(u => u.phone === phone);
-      if (existing) {
-        alert("Yeh phone number pehle se registered hai!");
-        return;
-      }
-      const newUser = { 
-        phone, 
-        password, 
-        balance: 0, 
-        deposited: false, 
-        refCount: 0, 
-        claimedLevels: [] 
-      };
-      users.push(newUser);
-      currentUser = newUser;
-      saveData();
-      showUserDashboard();
+      db.ref('users/' + phone).once('value', snapshot => {
+        if (snapshot.exists()) {
+          alert("Yeh phone number pehle se registered hai! Login karein.");
+        } else {
+          const newUser = {
+            phone: phone,
+            password: password,
+            balance: 0,
+            deposited: false,
+            refCount: 0,
+            referredBy: referredBy || null,
+            claimedLevels: []
+          };
+          db.ref('users/' + phone).set(newUser, err => {
+            if (!err) {
+              alert("Account kamyabi se ban gaya hai!");
+              currentUserPhone = phone;
+              localStorage.setItem('app_current_user_phone', phone);
+              showUserDashboard();
+            } else {
+              alert("Error: " + err.message);
+            }
+          });
+        }
+      });
     } else {
-      const user = users.find(u => u.phone === phone && u.password === password);
-      if (!user) {
-        alert("Ghalat Phone Number ya Password!");
-        return;
-      }
-      currentUser = user;
-      saveData();
-      showUserDashboard();
+      db.ref('users/' + phone).once('value', snapshot => {
+        const user = snapshot.val();
+        if (!user || user.password !== password) {
+          alert("Ghalat Phone Number ya Password!");
+        } else {
+          currentUserPhone = phone;
+          localStorage.setItem('app_current_user_phone', phone);
+          showUserDashboard();
+        }
+      });
     }
+    return false;
   }
 
   function showUserDashboard() {
@@ -363,27 +390,34 @@
     document.getElementById('admin-dashboard').classList.add('hidden');
     document.getElementById('user-dashboard').classList.remove('hidden');
 
-    const userObj = users.find(u => u.phone === currentUser.phone) || currentUser;
-    document.getElementById('user-balance').innerText = userObj.balance || 0;
-    
-    const badge = document.getElementById('deposit-status-badge');
-    if (userObj.deposited) {
-      badge.className = "status-badge status-active";
-      badge.innerText = "Active Account";
-    } else {
-      badge.className = "status-badge status-unpaid";
-      badge.innerText = "Unpaid / Inactive";
-    }
+    db.ref('users/' + currentUserPhone).on('value', snapshot => {
+      const userObj = snapshot.val();
+      if (!userObj) return;
 
-    document.getElementById('ref-link').value = window.location.origin + window.location.pathname + "?ref=" + userObj.phone;
-    renderLevels();
+      document.getElementById('user-balance').innerText = userObj.balance || 0;
+      
+      const badge = document.getElementById('deposit-status-badge');
+      if (userObj.deposited) {
+        badge.className = "status-badge status-active";
+        badge.innerText = "Active Account";
+      } else {
+        badge.className = "status-badge status-unpaid";
+        badge.innerText = "Unpaid / Inactive";
+      }
+
+      document.getElementById('ref-link').value = window.location.origin + window.location.pathname + "?ref=" + userObj.phone;
+      renderLevels(userObj);
+    });
   }
 
   function showAdminPanel() {
     document.getElementById('auth-page').classList.add('hidden');
     document.getElementById('user-dashboard').classList.add('hidden');
     document.getElementById('admin-dashboard').classList.remove('hidden');
-    renderAdminData();
+
+    db.ref('users').on('value', snapshot => renderAdminUsers(snapshot.val()));
+    db.ref('deposits').on('value', snapshot => renderAdminDeposits(snapshot.val()));
+    db.ref('withdrawals').on('value', snapshot => renderAdminWithdrawals(snapshot.val()));
   }
 
   function switchTab(tabName) {
@@ -403,7 +437,6 @@
     } else if (tabName === 'levels') {
       document.getElementById('tab-levels').classList.remove('hidden');
       tabs[2].classList.add('active');
-      renderLevels();
     }
   }
 
@@ -415,54 +448,61 @@
   }
 
   function submitDeposit(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     const method = document.getElementById('dep-method').value;
     const tid = document.getElementById('dep-tid').value;
+    const depId = Date.now();
 
-    deposits.push({
-      id: Date.now(),
-      userPhone: currentUser.phone,
+    db.ref('deposits/' + depId).set({
+      id: depId,
+      userPhone: currentUserPhone,
       amount: 300,
       method,
       tid,
       status: 'Pending'
+    }, err => {
+      if(!err) {
+        alert("Deposit Request Submit Ho Gayi! WhatsApp par screenshot lazmi bhejein.");
+        document.getElementById('dep-tid').value = '';
+      }
     });
-    saveData();
-    alert("Deposit Request Submit Ho Gayi Hai! WhatsApp par screenshot lazmi bhejein.");
-    document.getElementById('dep-tid').value = '';
+    return false;
   }
 
   function submitWithdrawal(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     const amount = parseInt(document.getElementById('with-amount').value);
     const method = document.getElementById('with-method').value;
     const phone = document.getElementById('with-phone').value;
     const name = document.getElementById('with-name').value;
 
-    const userObj = users.find(u => u.phone === currentUser.phone);
+    db.ref('users/' + currentUserPhone).once('value', snapshot => {
+      const userObj = snapshot.val();
+      if (userObj.balance < amount) {
+        alert("Aap ka balance kam hai!");
+        return;
+      }
 
-    if (userObj.balance < amount) {
-      alert("Aap ka balance kam hai!");
-      return;
-    }
+      const newBal = userObj.balance - amount;
+      const withId = Date.now();
 
-    userObj.balance -= amount;
-    withdrawals.push({
-      id: Date.now(),
-      userPhone: currentUser.phone,
-      withdrawPhone: phone,
-      accountName: name,
-      amount,
-      method,
-      status: 'Pending'
+      db.ref('users/' + currentUserPhone + '/balance').set(newBal);
+      db.ref('withdrawals/' + withId).set({
+        id: withId,
+        userPhone: currentUserPhone,
+        withdrawPhone: phone,
+        accountName: name,
+        amount,
+        method,
+        status: 'Pending'
+      }, err => {
+        if(!err) alert("Withdrawal Request Submit ho gayi hai!");
+      });
     });
-    saveData();
-    showUserDashboard();
-    alert("Withdrawal Request Submit ho gayi hai!");
+    return false;
   }
 
-  function renderLevels() {
-    const userObj = users.find(u => u.phone === currentUser.phone) || currentUser;
+  function renderLevels(userObj) {
     const refCount = userObj.refCount || 0;
     const claimed = userObj.claimedLevels || [];
     const container = document.getElementById('levels-container');
@@ -501,48 +541,82 @@
   }
 
   function claimBonus(levelNum, rewardAmount) {
-    const userObj = users.find(u => u.phone === currentUser.phone);
-    if (!userObj) return;
+    db.ref('users/' + currentUserPhone).once('value', snapshot => {
+      const userObj = snapshot.val();
+      let claimed = userObj.claimedLevels || [];
+      claimed.push(levelNum);
+      
+      const newBalance = (userObj.balance || 0) + rewardAmount;
 
-    if (!userObj.claimedLevels) userObj.claimedLevels = [];
-    userObj.claimedLevels.push(levelNum);
-    userObj.balance += rewardAmount;
-
-    saveData();
-    alert(`Mubarak ho! Aap ko Level ${levelNum} ka Rs. ${rewardAmount} bonus mil gaya hai.`);
-    showUserDashboard();
+      db.ref('users/' + currentUserPhone).update({
+        claimedLevels: claimed,
+        balance: newBalance
+      }, err => {
+        if(!err) alert(`Mubarak ho! Level ${levelNum} ka Rs. ${rewardAmount} bonus mil gaya hai.`);
+      });
+    });
   }
 
-  function renderAdminData() {
-    // Admin: Users List
+  function renderAdminUsers(data) {
+    if (!data) return;
+    const usersArr = Object.values(data);
+    
+    // Stats Update
+    document.getElementById('stat-total-users').innerText = usersArr.length;
+    document.getElementById('stat-active-users').innerText = usersArr.filter(u => u.deposited).length;
+
     const usersList = document.getElementById('admin-users-list');
-    usersList.innerHTML = users.map(u => `
+    usersList.innerHTML = usersArr.map(u => `
       <tr>
         <td>${u.phone}</td>
-        <td>Rs. ${u.balance}</td>
+        <td>Rs. ${u.balance || 0}</td>
         <td>${u.deposited ? '<span style="color:#34d399;font-weight:bold;">Active</span>' : '<span style="color:#f87171;">Unpaid</span>'}</td>
         <td>${u.refCount || 0}</td>
       </tr>
     `).join('');
+  }
 
-    // Admin: Deposits List
+  function renderAdminDeposits(data) {
     const depList = document.getElementById('admin-deposits-list');
-    depList.innerHTML = deposits.map(d => `
+    if (!data) {
+      depList.innerHTML = '';
+      document.getElementById('stat-pending-dep').innerText = 0;
+      return;
+    }
+    const depArr = Object.values(data);
+    document.getElementById('stat-pending-dep').innerText = depArr.filter(d => d.status === 'Pending').length;
+
+    depList.innerHTML = depArr.map(d => `
       <tr>
         <td>${d.userPhone}</td>
         <td>${d.method}<br><small style="color:var(--accent);">${d.tid}</small></td>
-        <td>${d.status}</td>
+        <td>
+          ${d.status === 'Approved' ? '<span style="color:#34d399;font-weight:bold;">Approved</span>' : 
+            d.status === 'Rejected' ? '<span style="color:#ef4444;font-weight:bold;">Rejected</span>' : 'Pending'}
+        </td>
         <td>
           ${d.status === 'Pending' ? `
-            <button onclick="approveDeposit(${d.id})" class="btn" style="padding:4px 8px; font-size:10px;">Approve</button>
-          ` : 'Approved'}
+            <div class="action-btn-group">
+              <button onclick="approveDeposit(${d.id})" class="btn" style="padding:4px 6px; font-size:10px;">Approve</button>
+              <button onclick="rejectDeposit(${d.id})" class="btn btn-danger" style="padding:4px 6px; font-size:10px;">Reject</button>
+            </div>
+          ` : d.status}
         </td>
       </tr>
     `).join('');
+  }
 
-    // Admin: Withdrawals List (Includes Phone + Account Holder Name)
+  function renderAdminWithdrawals(data) {
     const withList = document.getElementById('admin-withdrawals-list');
-    withList.innerHTML = withdrawals.map(w => `
+    if (!data) {
+      withList.innerHTML = '';
+      document.getElementById('stat-pending-with').innerText = 0;
+      return;
+    }
+    const withArr = Object.values(data);
+    document.getElementById('stat-pending-with').innerText = withArr.filter(w => w.status === 'Pending').length;
+
+    withList.innerHTML = withArr.map(w => `
       <tr>
         <td>${w.userPhone}</td>
         <td>
@@ -550,53 +624,96 @@
           ${w.withdrawPhone || 'N/A'} (${w.method})
         </td>
         <td>Rs. ${w.amount}</td>
-        <td>${w.status}</td>
+        <td>
+          ${w.status === 'Approved' ? '<span style="color:#34d399;font-weight:bold;">Approved</span>' : 
+            w.status === 'Rejected' ? '<span style="color:#ef4444;font-weight:bold;">Rejected</span>' : 'Pending'}
+        </td>
         <td>
           ${w.status === 'Pending' ? `
-            <button onclick="approveWithdrawal(${w.id})" class="btn" style="padding:4px 8px; font-size:10px;">Approve</button>
-          ` : 'Approved'}
+            <div class="action-btn-group">
+              <button onclick="approveWithdrawal(${w.id})" class="btn" style="padding:4px 6px; font-size:10px;">Approve</button>
+              <button onclick="rejectWithdrawal(${w.id})" class="btn btn-danger" style="padding:4px 6px; font-size:10px;">Reject</button>
+            </div>
+          ` : w.status}
         </td>
       </tr>
     `).join('');
   }
 
   function approveDeposit(id) {
-    const dep = deposits.find(d => d.id === id);
-    if (!dep) return;
+    db.ref('deposits/' + id).once('value', snapshot => {
+      const dep = snapshot.val();
+      if (!dep || dep.status !== 'Pending') return;
 
-    dep.status = 'Approved';
-    const user = users.find(u => u.phone === dep.userPhone);
-    if (user && !user.deposited) {
-      user.deposited = true;
-    }
-    saveData();
-    renderAdminData();
+      db.ref('deposits/' + id + '/status').set('Approved');
+
+      db.ref('users/' + dep.userPhone).once('value', userSnap => {
+        const user = userSnap.val();
+        if (user && !user.deposited) {
+          db.ref('users/' + dep.userPhone + '/deposited').set(true);
+
+          if (user.referredBy) {
+            db.ref('users/' + user.referredBy).once('value', refSnap => {
+              const refUser = refSnap.val();
+              if (refUser) {
+                const currentBalance = refUser.balance || 0;
+                const currentCount = refUser.refCount || 0;
+
+                db.ref('users/' + user.referredBy).update({
+                  balance: currentBalance + 50,
+                  refCount: currentCount + 1
+                });
+              }
+            });
+          }
+        }
+      });
+    });
+  }
+
+  function rejectDeposit(id) {
+    db.ref('deposits/' + id + '/status').set('Rejected');
   }
 
   function approveWithdrawal(id) {
-    const w = withdrawals.find(item => item.id === id);
-    if (!w) return;
-    w.status = 'Approved';
-    saveData();
-    renderAdminData();
+    db.ref('withdrawals/' + id + '/status').set('Approved');
+  }
+
+  function rejectWithdrawal(id) {
+    db.ref('withdrawals/' + id).once('value', snapshot => {
+      const withReq = snapshot.val();
+      if (!withReq || withReq.status !== 'Pending') return;
+
+      db.ref('withdrawals/' + id + '/status').set('Rejected');
+
+      // Refund the money back to user balance
+      db.ref('users/' + withReq.userPhone).once('value', userSnap => {
+        const user = userSnap.val();
+        if (user) {
+          const updatedBal = (user.balance || 0) + withReq.amount;
+          db.ref('users/' + withReq.userPhone + '/balance').set(updatedBal);
+        }
+      });
+    });
   }
 
   function logout() {
-    currentUser = null;
-    localStorage.removeItem('app_current_user');
+    currentUserPhone = null;
+    localStorage.removeItem('app_current_user_phone');
     document.getElementById('user-dashboard').classList.add('hidden');
     document.getElementById('admin-dashboard').classList.add('hidden');
     document.getElementById('auth-page').classList.remove('hidden');
   }
 
-  // Auto-login state check on page load
-  if (currentUser) {
-    if (currentUser.isAdmin) {
-      showAdminPanel();
-    } else {
-      showUserDashboard();
+  window.onload = function() {
+    if (currentUserPhone) {
+      if (currentUserPhone === ADMIN_PHONE) {
+        showAdminPanel();
+      } else {
+        showUserDashboard();
+      }
     }
-  }
+  };
 </script>
 </body>
   </html>
